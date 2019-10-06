@@ -14,6 +14,7 @@ class RegistroProyecto extends React.Component {
       correo: '',
       ubicacion: '',
       telefono: '',
+      link:'',
       categorias: [],
       necesidades:[]
     };
@@ -26,6 +27,7 @@ class RegistroProyecto extends React.Component {
     this.onChange5 = this.onChange5.bind(this);
     this.onChange6 = this.onChange6.bind(this);
     this.onChange7 = this.onChange7.bind(this);
+    this.onChange8 = this.onChange8.bind(this);
   }
   componentWillMount() {
     fetch('https://hackatonesan.herokuapp.com/categoria/list')
@@ -67,8 +69,8 @@ class RegistroProyecto extends React.Component {
 
 
   onSubmit = (e) => {
-    /*
-    fetch('http://159.89.182.231/api/vehiculos/',
+    
+    fetch('https://hackatonesan.herokuapp.com/proyecto/create',
     {
     headers: {
       'Accept': 'application/json',
@@ -77,26 +79,29 @@ class RegistroProyecto extends React.Component {
     method: "POST",
     body: JSON.stringify(
       {
-        "current_mileage": this.state.kmActual,
-        "daily_mot_due": this.state.fecha,
-        "engine_size": this.state.tamañoMaquina,
-        "model": {
-            "model_id": 1,
-            "model_name": "TOYOTA RIO",
-            "daily_hire_rate": 30.0,
-            "manufacturer": 1
-        },
-        "vehiclecategory": {
-            "vehicle_category_id": 1,
-            "vehicle_category_name": "HOGAR"
-        }
-    }
-      
+        "categoria": [
+          1,2,3
+        ], 
+        "comentarios": [], 
+        "correo": this.state.correo, 
+        "descripcion": this.state.descripcion, 
+        "facebook": "", 
+        "link": this.state.link, 
+        "linkedin": "", 
+        "necesidad": [
+          1,2,3], 
+        "nombre": this.state.nombre,
+        "objetivo": this.state.objetivo,
+        "resultado": "Resultado1", 
+        "organizacion": this.state.organizacion, 
+        "twitter": "", 
+        "ubicacion": this.state.ubicacion,
+        "telefono": this.state.telefono
+      }
     )
 })
 .then(function(res){ console.log(res) })
 .catch(function(res){ console.log(res) })
-    */
 
     console.log("Nombre" + this.state.nombre);
     console.log(this.state.organizacion);
@@ -105,8 +110,9 @@ class RegistroProyecto extends React.Component {
     console.log(this.state.correo);
     console.log(this.state.ubicacion);
     console.log(this.state.telefono);
+    console.log(this.state.link);
 
-    alert("opcion registrar");
+    alert("Registro exitoso");
     e.preventDefault();
 
   }
@@ -134,6 +140,10 @@ class RegistroProyecto extends React.Component {
   onChange7(e) {
     this.setState({ telefono: e.target.value });
   }
+  onChange8(e) {
+    this.setState({ link: e.target.value });
+  }
+
 
 
   render() {
@@ -188,6 +198,7 @@ class RegistroProyecto extends React.Component {
                     <i className="material-icons prefix">email</i>
                     <input id="email" type="email" className="validate" value={this.state.correo} onChange={this.onChange5} />
                     <label for="email">Correo</label>
+                    <span class="helper-text" data-error="Ingrese un correo válido" data-success="Correcto"></span>
                   </div>
                   <div className="input-field col s12 m10">
                     <i className="material-icons prefix">add_location</i>
@@ -201,10 +212,19 @@ class RegistroProyecto extends React.Component {
                   </div>
                 </div>
                 <div className="col s12 m6 l6 margen_top">
+                  <div className="input-field col s12 m10">
+                    <i className="material-icons prefix">attach_file</i>
+                    <input type="number" id="icon_attach_file" type="tel" className="validate" value={this.state.link} onChange={this.onChange8} />
+                    <label for="icon_attach_file">Enlace Imágen</label>
+                  </div>
+                  <div className="col s12 m10">
                   <label >Categorías:</label>
                   <CategoriaCombo listado={this.state.categorias} />
+                  </div>
+                  <div className="col s12 m10">
                   <label >Necesidades:</label>
                   <NecesidadCombo listado={this.state.necesidades} />
+                  </div>
                 </div>
                 <div className="SplitPane">
                   <div className="SplitPane-right margen_top">
