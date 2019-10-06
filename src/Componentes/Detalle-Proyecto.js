@@ -161,9 +161,7 @@ class DetalleProyecto extends React.Component {
         <img className="responsive-img" src={this.state.casa.link} />
         </div>
         <div className="headDetalleProyecto">
-
           <p>{this.state.casa.nombre}</p>
-
         </div>
         <div className="row">
           <div className="col s6 m6">
