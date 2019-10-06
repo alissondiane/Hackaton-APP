@@ -1,4 +1,11 @@
-import React from 'react'
+import React from 'react';
+
+import {
+    TwitterIcon,
+    FacebookIcon,
+    WhatsappIcon,
+    EmailIcon
+  } from 'react-share';
 
 class Footer extends React.Component {
     constructor(props) {
@@ -30,7 +37,11 @@ class Footer extends React.Component {
                 <div class="footer-copyright">
                     <div class="container">
                         © 2019 Mixture
-                        <a class="grey-text text-lighten-4 right" href="#!"></a>
+                        <div className="divSocial right"><a><TwitterIcon size={38} round={true} /></a></div>
+                        <div className="divSocial right"><a><FacebookIcon size={38} round={true} /></a></div>
+                        <div className="divSocial right"><a><EmailIcon size={38} round={true} /></a></div>
+                        <div className="divSocial right"><a><WhatsappIcon size={38} round={true} /></a></div>
+                       
                     </div>
                 </div>
             </footer>

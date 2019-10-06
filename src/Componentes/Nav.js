@@ -21,10 +21,9 @@ class Nav extends React.Component {
                 <div class="nav-wrapper">
                     <a href="#" class="brand-logo">Co-laborando</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="/Vista/inicio"><i class="material-icons left">home</i>Inicio</a></li>
-                        <li><a href="/Vista/inicio">Proyectos</a></li>
-                        <li><a href="#"><i class="material-icons left">phone</i>Contacto</a></li>
-                        <li><a onClick={this.VistaRegistro} class="waves-effect waves-light btn purple">REGISTRATE</a></li>
+                        <li><a href="/Vista/inicio"><i class="material-icons left">home</i>INICIO</a></li>
+                        <li><a href="#"><i class="material-icons left">phone</i>CONTÁCTANOS</a></li>
+                        <li><a onClick={this.VistaRegistro} class="waves-effect waves-light btn purple">REGISTRAR</a></li>
                     </ul>
                 </div>
                 </div>

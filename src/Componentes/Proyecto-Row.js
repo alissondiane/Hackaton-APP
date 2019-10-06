@@ -2,6 +2,11 @@ import React from 'react'
 import { browserHistory } from 'react-router-3';
 import CategoriaList from './Categoria-List';
 
+import {
+  TwitterIcon,
+  FacebookIcon
+} from 'react-share';
+
 class ProyectoRow extends React.Component {
   constructor(props) {
     super(props);
@@ -26,7 +31,7 @@ class ProyectoRow extends React.Component {
             <a onClick={this.VistaAlquiler} className="btn-floating halfway-fab waves-effect waves-light purple"><i class="material-icons">add</i></a>
           </div>
           <div className="card-content">
-            <span className="card-title">{this.state.casa.nombre}</span>
+            <span className="card-title"><strong>{this.state.casa.nombre}</strong></span>
           </div>
           <div className="card-action">
             <div className="row">
@@ -34,8 +39,8 @@ class ProyectoRow extends React.Component {
               <CategoriaList listado={this.state.casa.categoria}/>
               </div>
               <div className="col s12 m4">
-                <a className="btn-floating btn-small waves-effect waves-light gray" ><i class=" material-icons">face</i></a>
-                <a className="btn-floating btn-small waves-effect waves-light black" ><i class=" material-icons">feedback</i></a>
+                <div className="divSocial"><a><TwitterIcon size={38} round={true} /></a></div>
+                <div className="divSocial"><a><FacebookIcon size={38} round={true} /></a></div>
               </div>
             </div>
           </div>

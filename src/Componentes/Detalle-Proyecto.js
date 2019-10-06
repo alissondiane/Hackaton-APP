@@ -14,8 +14,8 @@ class DetalleProyecto extends React.Component {
       email: '',
       fechaInicio: '',
       fechaFin: '',
-      categorias:[],
-      comentarios:[]
+      categorias: [],
+      comentarios: []
     };
 
     this.onSubmit = this.onSubmit.bind(this);
@@ -34,7 +34,7 @@ class DetalleProyecto extends React.Component {
     //console.log(casarecibida);
     //this.setState({ casa: casarecibida })
 
-    fetch('https://hackatonesan.herokuapp.com/proyecto/'+this.state.id)
+    fetch('https://hackatonesan.herokuapp.com/proyecto/' + this.state.id)
       .then((response) => {
         return response.json()
       })
@@ -44,24 +44,24 @@ class DetalleProyecto extends React.Component {
         console.log(data);
         var listado = data.categoria;
         var listado2 = data.comentarios;
-        var opcionesCategorias  = [];
-        var opcionesComentarios  = [];
-        for (let i = 0; i<listado.length; i++) {
+        var opcionesCategorias = [];
+        var opcionesComentarios = [];
+        for (let i = 0; i < listado.length; i++) {
           var id = listado[i].id;
           var nombre = listado[i].nombre;
-          var option = {id: id, nombre:nombre};
+          var option = { id: id, nombre: nombre };
           opcionesCategorias.push(option);
         }
-        for (let i = 0; i<listado2.length; i++) {
+        for (let i = 0; i < listado2.length; i++) {
           var detalle = listado2[i].detalle;
           var puntaje = listado2[i].puntaje;
-          var option2 = {detalle: detalle, puntaje:puntaje};
+          var option2 = { detalle: detalle, puntaje: puntaje };
           opcionesComentarios.push(option2);
         }
         this.setState({
           casa: data,
-          categorias:opcionesCategorias,
-          comentarios:opcionesComentarios
+          categorias: opcionesCategorias,
+          comentarios: opcionesComentarios
         })
 
       })
@@ -150,30 +150,27 @@ class DetalleProyecto extends React.Component {
               <a href="#" class="brand-logo">Co-laborando</a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="/Vista/Inicio"><i class="material-icons left">home</i>INICIO</a></li>
-                <li><a href="/Vista/Inicio">PROYECTOS</a></li>
-                <li><a href="#"><i class="material-icons left">phone</i>CONTACTO</a></li>
+                <li><a href="#"><i class="material-icons left">phone</i>CONTÁCTANOS</a></li>
               </ul>
             </div>
           </div>
         </nav>
         <hr />
         <div className="portada">
-        <img className="responsive-img" src={this.state.casa.link} />
+          <img className="responsive-img" src={this.state.casa.link} />
         </div>
         <div className="headDetalleProyecto">
           <p>{this.state.casa.nombre}</p>
         </div>
         <div className="row">
-          <div className="col s6 m6">
+          <div className="col s12 m6 l6">
             <img class=" responsive-img" src="https://blog.oxfamintermon.org/wp-content/uploads/2018/10/ayuda-social.jpg" />
           </div>
-          <div className="col s6 m6">
+          <div className="col s12 m6 l6">
             <div className="containerDetalle">
-
               <label className="labels">Organización</label>
               <span >{this.state.casa.organizacion}</span>
               <br></br>
-
               <label className="labels" >Descripción</label>
               <span>{this.state.casa.descripcion}</span>
               <br></br>
@@ -183,13 +180,11 @@ class DetalleProyecto extends React.Component {
           </div>
         </div>
         <div class="row">
-          <div className="col s6 m6">
-            <div className="container">
-
+          <div className="col s12 m6 l6">
+            <div className="containerDetalle">
               <label className="labels">Ubicación</label>
               <span >{this.state.casa.ubicacion}</span>
               <br></br>
-
               <label className="labels" >Correo</label>
               <span>{this.state.casa.correo}</span>
               <br></br>
@@ -197,7 +192,7 @@ class DetalleProyecto extends React.Component {
               <span>{this.state.casa.telefono}</span>
             </div>
           </div>
-          <div className="col s6 m6">
+          <div className="col s12 m6 l6">
             <img class=" responsive-img" src="https://images.unsplash.com/photo-1478476868527-002ae3f3e159?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80" />
 
           </div>
@@ -208,10 +203,10 @@ class DetalleProyecto extends React.Component {
         </div>
         <div className="row center-xs">
           <div className="container">
-           
+
             <ComentarioList listado={this.state.comentarios} />
-          
-         
+
+
           </div>
         </div>
         <div className="headDetalleProyecto">
@@ -219,9 +214,9 @@ class DetalleProyecto extends React.Component {
         </div>
         <div className="row center-xs">
           <div className="container">
-          <div className="container-categoria">
-          <CategoriaList listado={this.state.categorias} />
-          </div>
+            <div className="container-categoria">
+              <CategoriaList listado={this.state.categorias} />
+            </div>
           </div>
         </div>
         <Footer />
