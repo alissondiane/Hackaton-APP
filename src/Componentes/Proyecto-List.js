@@ -7,9 +7,9 @@ class ProyectoList extends React.Component {
     return (
         <div>
           {
-            this.props.listado.map((vehiculo) => {
-              return <ProyectoRow  key={vehiculo.toString()} 
-                                  vehiculo={vehiculo} />
+            this.props.listado.map((proyecto) => {
+              return <ProyectoRow  key={proyecto.toString()} 
+              proyecto={proyecto} />
             })
           }
         </div>

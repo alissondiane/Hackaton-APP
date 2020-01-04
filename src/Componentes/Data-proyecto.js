@@ -5,7 +5,16 @@ const PROYECTOS = [
     nombre: 'Proyecto el Quijote',
     ubicacion: 'Lima, Av.Reyes 234234',
     correo: 'proyectoQuijote@.hotmail.com',
-    categorias: ['Educación','Salud'],
+    categoria:[
+      {
+        id: 1, 
+        nombre: "Educacion"
+      }, 
+      {
+        id: 2, 
+        nombre: "Cultura"
+      }
+    ],
     descripcion: 'En un asentamiento a 30 kilómetros de Lima, un proyecto educativo para formar a niños y jóvenes centrado en la expresión artística y la lectura inaugura un centro cultural autogestionado',
     objetivo: 'El objetivo es formar líderes de 6 a 12 años para que sean buenos ciudadanos',
     resultado: 'Resultado1',
@@ -33,7 +42,20 @@ const PROYECTOS = [
     nombre: 'Proyecto Salud América',
     ubicacion: 'Chorrillos, Jr 2343',
     correo: 'proyectoSaludAmerica@.hotmail.com',
-    categorias: ['Salud','Educacion','Otros'],
+    categoria:[
+      {
+        id: 1, 
+        nombre: "Educacion"
+      }, 
+      {
+        id: 4, 
+        nombre: "Salud"
+      }, 
+      {
+        id: 3, 
+        nombre: "Tecnologico"
+      }
+    ],
     descripcion: 'El proyecto beneficiará directamente a 80 familias, un total de 560 personas e indirectamente a mas de mil hombres y mujeres wampis que viven en pequeños asentamientos en medio del bosque Amazónico',
     objetivo: 'El objetivo de mejorar y actualizar el acceso al agua potable en Santa Cruz de la Chuca',
     resultado: 'Resultado2',
@@ -48,7 +70,12 @@ const PROYECTOS = [
     nombre: 'Proyecto Agropecuario América',
     ubicacion: 'Lince, Los jazmines 423',
     correo: 'ProyectoAgroAmerica@.hotmail.com',
-    categorias: ['Ambiental','Otros'],
+    categoria:[
+      {
+        id: 2, 
+        nombre: "Cultura"
+      }
+    ],
     descripcion: 'El proyecto beneficiará directamente a 80 familias, un total de 560 personas e indirectamente a mas de mil hombres y mujeres wampis que viven en pequeños asentamientos en medio del bosque Amazónico',
     objetivo: 'El objetivo apoyar a estas comunidades para que sean autosuficientes',
     resultado: 'Resultado3',
@@ -59,7 +86,6 @@ const PROYECTOS = [
     link:'https://mansunides.org/sites/default/files/peru_1.jpg'
   
   }
-]
-  ;
+];
 
 export default PROYECTOS;

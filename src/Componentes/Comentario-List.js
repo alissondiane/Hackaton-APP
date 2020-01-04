@@ -6,9 +6,9 @@ class ComentarioList extends React.Component {
     return (
         <div class>
           {
-            this.props.listado.map((vehiculo) => {
-              return <ComentarioRow  key={vehiculo.toString()} 
-                                  vehiculo={vehiculo} />
+            this.props.listado.map((comentario) => {
+              return <ComentarioRow  key={comentario.toString()} 
+              comentario={comentario} />
             })
           }
         </div>

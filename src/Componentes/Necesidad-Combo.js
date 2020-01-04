@@ -12,7 +12,6 @@ class NecesidadCombo extends React.Component {
                 className="clase_concepto"
                 name={necesidad.nombre}
                 type="checkbox" />
-
                 <span key={necesidad.id} className="mdc-checkbox">
                 {necesidad.nombre}
               

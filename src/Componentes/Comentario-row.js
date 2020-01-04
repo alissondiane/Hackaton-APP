@@ -4,7 +4,7 @@ class ComentarioRow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      casa: this.props.vehiculo
+      comentario: this.props.comentario
     };
   }
   render() {
@@ -17,9 +17,9 @@ class ComentarioRow extends React.Component {
             </div>
             <div class="col s12 m8 l7">
               <span class="black-text text-center">
-                <p>"{this.state.casa.detalle}"</p>
+                <p>"{this.state.comentario.detalle}"</p>
                 
-                <p>Puntaje: {this.state.casa.puntaje}</p>  
+                <p>Puntaje: {this.state.comentario.puntaje}</p>  
               </span>
             </div>
           </div>

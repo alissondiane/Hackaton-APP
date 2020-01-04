@@ -2,6 +2,8 @@ import React from 'react';
 import Footer from './Footer';
 import CategoriaCombo from './Categoria-Combo';
 import NecesidadCombo from './Necesidad-Combo';
+import NECESIDAD from './Data-necesidad';
+import CATEGORIAS from './DataCategoria';
 
 class RegistroProyecto extends React.Component {
   constructor(props) {
@@ -30,6 +32,13 @@ class RegistroProyecto extends React.Component {
     this.onChange8 = this.onChange8.bind(this);
   }
   componentWillMount() {
+    //DATA PRUEBA
+
+    this.setState({
+      necesidades: NECESIDAD,
+      categorias:CATEGORIAS
+    })
+    //Consulta API REST
     fetch('https://hackatonesan.herokuapp.com/categoria/list')
       .then((response) => {
         return response.json()
@@ -147,8 +156,6 @@ class RegistroProyecto extends React.Component {
 
 
   render() {
-    const { nombres, isLoading, isValid } = this.state;
-
     return (
 
       <div >

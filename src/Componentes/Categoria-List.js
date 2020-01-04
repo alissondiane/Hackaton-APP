@@ -6,9 +6,9 @@ class CategoriaList extends React.Component {
     return (
         <div >
           {
-            this.props.listado.map((vehiculo) => {
-              return <CategoriaRow  key={vehiculo.toString()} 
-                                  vehiculo={vehiculo} />
+            this.props.listado.map((categoria) => {
+              return <CategoriaRow  key={categoria.toString()} 
+              categoria={categoria} />
             })
           }
         </div>

@@ -5,13 +5,13 @@ class CategoriaRow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      casa: this.props.vehiculo
+      categoria: this.props.categoria
     };
   }
   render() {
     return (
       <span className="Categoria purple">
-          {this.state.casa.nombre}
+          {this.state.categoria.nombre}
       </span>
     )
   }

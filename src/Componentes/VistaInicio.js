@@ -1,19 +1,23 @@
 import React from 'react';
 import ProyectoList from './Proyecto-List'
-import $ from 'jquery';
 import Carrousel from './Carrousel'
 import Nav from './Nav';
 import Footer from './Footer';
+import PROYECTOS from './Data-proyecto';
+
 
 class VistaInicio extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            vehiculos: []
+            proyectos: []
         }
     }
     componentWillMount() {
+        //DATA PRUEBA
+        this.setState({ proyectos: PROYECTOS })
 
+        //Consulta API REST
         fetch('https://hackatonesan.herokuapp.com/proyecto/list',
             {
                 headers: {
@@ -26,10 +30,10 @@ class VistaInicio extends React.Component {
                 console.log("Respuesta de JSON")
                 return response.json();
             })
-            .then((alumno) => {
+            .then((respuesta) => {
                 console.log("Realizando la consulta");
-                console.log(alumno);
-                var listado = alumno;
+                console.log(respuesta);
+                var listado = respuesta;
                 var proyecto = [];
 
                 for (let i = 0; i < listado.length; i++) {
@@ -47,17 +51,15 @@ class VistaInicio extends React.Component {
                     proyecto.push(option);
                 }
                 console.log(proyecto)
-                this.setState({ vehiculos: proyecto })
+                this.setState({ proyectos: proyecto })
 
             })
             .catch(error => {
-                // si hay algún error lo mostramos en consola
                 console.error(error)
             });
+            
     }
     render() {
-        const { nombres, isLoading, isValid } = this.state;
-
         return (
             <div className="">
                 <Nav />
@@ -83,7 +85,7 @@ class VistaInicio extends React.Component {
                             </nav>
                         </div>
                         <div className="row">
-                            <ProyectoList listado={this.state.vehiculos} />
+                            <ProyectoList listado={this.state.proyectos} /> 
                         </div>
                     </div>
                 </div>
